@@ -1,3 +1,5 @@
+import pprint
+
 from bson.objectid import ObjectId
 
 from mongo_lab.services.database import MongoDB
@@ -16,5 +18,6 @@ if __name__ == '__main__':
         'properties': {'цвет': 'красный', 'вес': '1кг'}
     })
     product_info = mongo.get_product_info(product_id, 'золото')
-    print(product_info)
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(product_info)
 

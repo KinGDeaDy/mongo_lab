@@ -75,12 +75,13 @@ class MongoDB:
             bulk_discount = BULK_DISCOUNTS.get(quantity, 0)
             base_customer_price = calculate_price(
                 base_price, duty, category_discounts['base_customer'],
-                bulk_discount,
+                0,
                 LOYALTY_DISCOUNTS[loyalty_program]
             )
             base_corporate_price = calculate_price(
                 base_price, duty, category_discounts['base_corporate'],
-                bulk_discount, LOYALTY_DISCOUNTS[loyalty_program]
+                0,
+                LOYALTY_DISCOUNTS[loyalty_program]
             )
             bulk_customer_price = calculate_price(
                 bulk_price, duty, category_discounts['bulk_customer'],

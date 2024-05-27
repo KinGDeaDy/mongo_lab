@@ -8,6 +8,6 @@ def calculate_price(
     """
     вычисляет цену с учетом всех скидок и наценок.
     """
-    price_with_duty = base_price + duty
+    price_with_duty = base_price * (1 + duty / 100)
     discounted_price = price_with_duty * (1 - category_discount) * (1 - bulk_discount) * (1 - loyalty_discount)
     return discounted_price
